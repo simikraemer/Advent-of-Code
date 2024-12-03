@@ -3,7 +3,7 @@ from collections import defaultdict, deque
 fiji1 = 0
 fiji2 = 0
 
-with open("input/17.txt", "r") as file:
+with open("AdventofCode2023/input/17.txt", "r") as file:
     zeilen = file.read().strip().split("\n")
     plattform = [[int(digit) for digit in row] for row in zeilen]
 

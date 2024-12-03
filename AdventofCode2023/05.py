@@ -18,7 +18,7 @@ def übersetzen(von_werte, mappings):
 maps = {}
 aktuelle_map = None
 
-with open('input/5.txt', 'r') as datei:
+with open('AdventofCode2023/input/5.txt', 'r') as datei:
     zeilen = datei.readlines()
     for zeile in zeilen:
         zeile = zeile.strip()

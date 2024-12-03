@@ -10,7 +10,7 @@ unterer_teil_values = []
 
 upper_complete = False
 
-with open("input/19.txt", "r") as file:
+with open("AdventofCode2023/input/19.txt", "r") as file:
     for line in file:
         line = line.strip()
         if line == "":

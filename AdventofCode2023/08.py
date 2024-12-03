@@ -1,5 +1,5 @@
 import math
-with open("input/8.txt", "r") as datei:
+with open("AdventofCode2023/input/8.txt", "r") as datei:
     source_liste = datei.readlines()
 
 gesamtarray = []

@@ -1,6 +1,6 @@
 from collections import deque
 
-with open("input/11.txt", 'r') as fl:
+with open("AdventofCode2023/input/11.txt", 'r') as fl:
     zeilen = fl.read().strip().split()
 
 fiji1 = 0

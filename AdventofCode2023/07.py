@@ -1,4 +1,4 @@
-with open("input/7.txt", "r") as datei:
+with open("AdventofCode2023/input/7.txt", "r") as datei:
     source_liste = datei.readlines()
     
 hände = []

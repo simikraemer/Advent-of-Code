@@ -5,7 +5,7 @@ fiji2 = 0
 
 data = []
 
-with open("input/21.txt", "r") as file:
+with open("AdventofCode2023/input/21.txt", "r") as file:
     for zeile in file:
         data.append(zeile.strip())
 

@@ -1,4 +1,4 @@
-with open('input/6.txt', 'r') as datei:
+with open('AdventofCode2023/input/6.txt', 'r') as datei:
     source_liste = datei.readlines()
     
 time_array1 = []

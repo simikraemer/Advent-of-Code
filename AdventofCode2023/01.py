@@ -1,4 +1,4 @@
-with open('input/1.txt', 'r') as datei:
+with open('AdventofCode2023/input/1.txt', 'r') as datei:
     source_liste = datei.readlines()
     
 gefilterte_liste = []
@@ -27,7 +27,7 @@ for eintrag in source_liste:
 fiji1 = sum(map(int, gefilterte_liste))
 
 
-with open('input/1.txt', 'r') as datei:
+with open('AdventofCode2023/input/1.txt', 'r') as datei:
     source_liste = datei.readlines()
     
 gefilterte_liste = []
