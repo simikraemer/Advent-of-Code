@@ -19,5 +19,6 @@ for funktion, x, y in funktionen:
         if enabled:
             aufgabe2 += int(x) * int(y)
 
-print(aufgabe1)
-print(aufgabe2)
+
+print("Aufgabe 1: " + str(aufgabe1))
+print("Aufgabe 2: " + str(aufgabe2))

@@ -13,18 +13,18 @@ with open("AdventofCode2024/input/02.txt", "r") as file:
 for line in lines:
     array.append([int(value) for value in line.split()])
     
-counter_1 = 0
-counter_2 = 0
+counter1 = 0
+counter2 = 0
 
 for subarray in array:
     safe = check_array_validity(subarray)
     
     if safe:
-        counter_1 += 1
-        counter_2 += 1
+        counter1 += 1
+        counter2 += 1
     else:        
         if any(check_array_validity(subarray[:i] + subarray[i+1:]) for i in range(len(subarray))):
-            counter_2 += 1
+            counter2 += 1
         
-print("Aufgabe 1: " + str(counter_1))
-print("Aufgabe 2: " + str(counter_2))
+print("Aufgabe 1: " + str(counter1))
+print("Aufgabe 2: " + str(counter2))

@@ -60,11 +60,11 @@ for zeile in range(1, zeilenlänge - 1):
         u_r = array[zeile + 1][spalte + 1]
         
         # Unschön überprüfen ob einer der vier möglichen Muster trifft
-        if (o_l == "M" and o_r == "M" and u_l == "S" and u_r == "S") or \
-           (o_l == "S" and o_r == "S" and u_l == "M" and u_r == "M") or \
-           (o_l == "M" and o_r == "S" and u_l == "M" and u_r == "S") or \
-           (o_l == "S" and o_r == "M" and u_l == "S" and u_r == "M"):
+        if (o_l, o_r, u_l, u_r) == ("M", "M", "S", "S") or \
+           (o_l, o_r, u_l, u_r) == ("S", "S", "M", "M") or \
+           (o_l, o_r, u_l, u_r) == ("M", "S", "M", "S") or \
+           (o_l, o_r, u_l, u_r) == ("S", "M", "S", "M"):
             counter2 += 1
 
-print(counter1)
-print(counter2)
+print("Aufgabe 1: " + str(counter1))
+print("Aufgabe 2: " + str(counter2))
