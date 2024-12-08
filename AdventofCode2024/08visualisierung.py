@@ -12,11 +12,15 @@ def visualize_array(array, i_pos, j_pos, schwingungsbäuche2, zeichen):
                 plt.text(y, x, array[x][y], ha="center", va="center", fontsize=10, color="black")
     
     if i_pos:
-        plt.scatter(i_pos[1], i_pos[0], c="green", label="i-Position", s=1000, alpha=0.3)  # i wird grün mit Transparenz
+        plt.scatter(i_pos[1], i_pos[0], c="green", label="i-Position", s=1000, alpha=0.3)
     if j_pos:
-        plt.scatter(j_pos[1], j_pos[0], c="blue", label="j-Position", s=1000, alpha=0.3)   # j wird blau mit Transparenz
+        plt.scatter(j_pos[1], j_pos[0], c="blue", label="j-Position", s=1000, alpha=0.3)
 
-    
+    if i_pos and j_pos:
+        x_vals = [i_pos[1], j_pos[1]]
+        y_vals = [i_pos[0], j_pos[0]]
+        plt.plot(x_vals, y_vals, color="black", alpha=1, linewidth=1)
+
     schwingungsbäuche2_coords = np.array(list(schwingungsbäuche2))
     if len(schwingungsbäuche2_coords) > 0:
         plt.scatter(schwingungsbäuche2_coords[:, 1], schwingungsbäuche2_coords[:, 0], 
