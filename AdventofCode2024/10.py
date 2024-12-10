@@ -50,12 +50,12 @@ with open("AdventofCode2024/input/10.txt", "r") as file:
 startkoord = []
 endkoord = []
 
-for zeilen_index, zeile in enumerate(array):
-    for spalten_index, zeichen in enumerate(zeile):
+for x, zeile in enumerate(array):
+    for y, zeichen in enumerate(zeile):
         if zeichen == "0":
-            startkoord.append((zeilen_index, spalten_index))
+            startkoord.append((x, y))
         elif zeichen == "9":
-            endkoord.append((zeilen_index, spalten_index))
+            endkoord.append((x, y))
 
 # Aufgabe 1
 counter1 = 0
