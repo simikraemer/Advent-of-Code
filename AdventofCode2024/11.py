@@ -28,13 +28,13 @@ def blinzeln(steine, iterationen):
 
 with open("AdventofCode2024/input/11.txt", "r") as file:
     line = file.readline().strip()
-steine = map(int, line.split())
 
 # Aufgabe 1
+steine = map(int, line.split())
 steine_aufgabe_1 = blinzeln(steine, 25)
 print("Aufgabe 1:", sum(steine_aufgabe_1.values()))
 
-steine = map(int, line.split())
 # Aufgabe 2
+steine = map(int, line.split())
 steine_aufgabe_2 = blinzeln(steine, 75)
 print("Aufgabe 2:", sum(steine_aufgabe_2.values()))
