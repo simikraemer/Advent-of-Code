@@ -10,7 +10,6 @@ def parse_claw_machines(lines):
                 current_claw_machine = {}
             continue
 
-        # Parse die Zeile
         if line.startswith("Button A:"):
             x_a, y_a = map(int, [s.split("+")[1] for s in line.split(", ")])
             current_claw_machine["Button A"] = {"X": x_a, "Y": y_a}
@@ -28,9 +27,8 @@ def parse_claw_machines(lines):
 
 
 def find_cheapest_path(claw_machine):
-    from math import inf
+    from sympy import Matrix, solve_linear_system, symbols
 
-    # Extrahiere die notwendigen Daten
     button_a = claw_machine["Button A"]
     button_b = claw_machine["Button B"]
     prize = claw_machine["Prize"]
@@ -38,33 +36,49 @@ def find_cheapest_path(claw_machine):
     target_x, target_y = prize["X"], prize["Y"]
     cost_a, cost_b = 3, 1
 
-    min_cost = inf
-    best_path = {"A": 0, "B": 0}
+    A, B = symbols('A B')
 
-    max_steps = 100
-    for a_steps in range(max_steps):
-        for b_steps in range(max_steps):
-            x = a_steps * button_a["X"] + b_steps * button_b["X"]
-            y = a_steps * button_a["Y"] + b_steps * button_b["Y"]
+    matrix = Matrix([
+        [button_a["X"], button_b["X"], target_x],
+        [button_a["Y"], button_b["Y"], target_y]
+    ])
 
-            if x == target_x and y == target_y:
-                cost = a_steps * cost_a + b_steps * cost_b
-                if cost < min_cost:
-                    min_cost = cost
-                    best_path = {"A": a_steps, "B": b_steps}
+    solution = solve_linear_system(matrix, A, B)
 
-    return {"Steps": best_path, "Cost": min_cost}
+    if solution is not None:
+        A = solution[A]
+        B = solution[B]
 
+        if A.is_integer and B.is_integer and A >= 0 and B >= 0:
+            A, B = int(A), int(B)
+            cost = A * cost_a + B * cost_b
+            return {"Steps": {"A": A, "B": B}, "Cost": cost}
+    else:
+        return None
+
+
+from tqdm import tqdm
 
 with open("AdventofCode2024/input/13.txt", "r") as file:
     lines = file.readlines()
 
 claw_machines = parse_claw_machines(lines)
 
+# Aufgabe 1
 counter1 = 0
-for i, claw_machine in enumerate(claw_machines):
+for i, claw_machine in enumerate(tqdm(claw_machines, desc="Aufgabe 1")):
     result = find_cheapest_path(claw_machine)
-    print(i+1,"/",len(claw_machines))
-    if result["Cost"] != float('inf'):
+    if result is not None and result["Cost"] != float('inf'):
         counter1 += result["Cost"]
 print("Aufgabe 1:", counter1)
+
+# Aufgabe 2
+offset = 10000000000000
+counter2 = 0
+for i, claw_machine in enumerate(tqdm(claw_machines, desc="Aufgabe 2")):
+    claw_machine["Prize"]["X"] += offset
+    claw_machine["Prize"]["Y"] += offset
+    result = find_cheapest_path(claw_machine)
+    if result is not None and result["Cost"] != float('inf'):
+        counter2 += result["Cost"]
+print("Aufgabe 2:", counter2)
