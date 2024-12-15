@@ -66,14 +66,12 @@ def calculate_gps_sum(grid):
     gps_sum = 0
 
     for (x, y), value in grid.items():
-        if value == 'O':  # Wenn das Feld eine Box enthält
+        if value == 'O':
             gps_sum += y * 100 + x
 
     return gps_sum
 
 
-
-# Datei einlesen und parse_input verwenden
 with open("AdventofCode2024/input/15.txt", "r") as file:
     lines = file.readlines()
 
