@@ -84,10 +84,10 @@ def animate_paths(grid, paths):
     cmap = {
         0: (1.0, 1.0, 1.0),  # Weiß - Frei
         1: (0.0, 0.0, 0.0),  # Schwarz - Wand
-        2: (1.0, 0.0, 0.0),  # Rot - Start
+        2: (0.0, 0.0, 1.0),  # Blau - Start
         3: (0.0, 1.0, 0.0),  # Grün - Ende
-        4: (0.0, 0.0, 1.0),  # Blau - Rentier
-        5: (0.5, 0.5, 0.5),  # Grau - Besucht
+        4: (1.0, 0.0, 0.0),  # Rot - Rentier Rudolf mit der roten Nase
+        5: (0.8, 0.8, 0.0),  # Gelb - Besucht
     }
 
     fig, ax = plt.subplots()
