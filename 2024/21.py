@@ -123,7 +123,7 @@ DIGIPAD = {
 start_positions = [(3, 2), (0, 2), (0, 2)]
 danger_zones = [(3, 0), (0, 0), (0, 0)]
 
-with open("AdventofCode2024/input/21.txt", "r") as file:
+with open("2024/input/21.txt", "r") as file:
     lines = [line.strip() for line in file.readlines()]
 
 result = calculate_total_complexity(lines, NUMPAD, DIGIPAD, start_positions, danger_zones)

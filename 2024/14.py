@@ -46,7 +46,7 @@ def bild_speichern(robos, sekunde, breite, höhe):
         color = (255, 0, 0) if count == 1 else (0, 0, 255)
         draw.rectangle([top_left, bottom_right], fill=color)
 
-    output_pfad = f"AdventofCode2024/output/14 - {sekunde}s.jpg"
+    output_pfad = f"2024/output/14 - {sekunde}s.jpg"
     image.save(output_pfad, "JPEG")
 
 
@@ -88,7 +88,7 @@ def quadranten_zählen(robos, breite, höhe):
     return result
 
 
-with open("AdventofCode2024/input/14.txt", "r") as file:
+with open("2024/input/14.txt", "r") as file:
     lines = file.readlines()
 
 robos = parse_robos(lines)

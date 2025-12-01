@@ -1,6 +1,6 @@
 import re
 
-with open("AdventofCode2024/input/03.txt", "r") as file:
+with open("2024/input/03.txt", "r") as file:
     input = file.read()
 
 pattern = r"(do\(\)|don't\(\)|mul\((\d+),(\d+)\))"

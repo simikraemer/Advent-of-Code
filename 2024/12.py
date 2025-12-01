@@ -107,7 +107,7 @@ def berechne_areas(areas, array):
     return ergebnisse
 
 
-with open("AdventofCode2024/input/12.txt", "r") as file:
+with open("2024/input/12.txt", "r") as file:
     lines = file.readlines()
     array = [list(line.strip()) for line in lines]
 

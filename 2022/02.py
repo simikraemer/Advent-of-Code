@@ -37,7 +37,7 @@ x2_wert_zug = {
 x1 = 0
 x2 = 0
 
-with open("AdventofCode2022/input/02.txt", "r") as file:
+with open("2022/input/02.txt", "r") as file:
     inhalt = file.read().strip()
     runden = inhalt.split("\n")
     for runde in runden:

@@ -11,7 +11,7 @@ def koordinatensystem(koordinaten):
 fiji1 = 0
 fiji2 = 0
 
-with open("AdventofCode2023/input/18.txt", "r") as file:
+with open("2023/input/18.txt", "r") as file:
     zeilen = [zeile.split() for zeile in file.read().strip().split("\n")]
 
 richtungen = {

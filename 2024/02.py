@@ -7,7 +7,7 @@ def check_array_validity(subarray):
 
 array = []
 
-with open("AdventofCode2024/input/02.txt", "r") as file:
+with open("2024/input/02.txt", "r") as file:
     lines = file.readlines()
     
 for line in lines:

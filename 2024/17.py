@@ -74,7 +74,7 @@ def find_minimal_A(a, n, program):
                 return result
     return False
 
-with open("AdventofCode2024/input/17.txt", "r") as file:
+with open("2024/input/17.txt", "r") as file:
     lines = file.readlines()
 
 A, B, C, program = parse_input(lines)

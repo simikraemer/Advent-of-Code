@@ -56,7 +56,7 @@ def find_blocking_coordinate(coordinates, grid_size, ugrenze, ogrenze):
     if not is_path_possible(last_valid_bytes + 1):
         return coordinates[last_valid_bytes]
     
-with open("AdventofCode2024/input/18.txt", "r") as file:
+with open("2024/input/18.txt", "r") as file:
     coordinates = [tuple(map(int, line.strip().split(','))) for line in file.readlines()]
 
 # Aufgabe 1

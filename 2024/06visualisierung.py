@@ -47,7 +47,7 @@ def simulate_guard_fast(array, startkoord, richtungen, aufgabe2=False):
             x, y = nx, ny
     return len(besuchte_koord) if not aufgabe2 else False
 
-with open("AdventofCode2024/input/06.txt", "r") as file:
+with open("2024/input/06.txt", "r") as file:
     lines = file.readlines()
     array = [list(line.strip()) for line in lines]
 

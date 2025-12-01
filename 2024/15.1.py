@@ -72,7 +72,7 @@ def calculate_gps_sum(grid):
     return gps_sum
 
 
-with open("AdventofCode2024/input/15.txt", "r") as file:
+with open("2024/input/15.txt", "r") as file:
     lines = file.readlines()
 
 grid, commands = parse_input(lines)

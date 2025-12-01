@@ -30,7 +30,7 @@ def visualize_array(array, i_pos, j_pos, schwingungsbäuche2, zeichen):
     plt.pause(0.001)
 
 
-with open("AdventofCode2024/input/08.txt", "r") as file:
+with open("2024/input/08.txt", "r") as file:
     lines = file.readlines()
     array = [list(line.strip()) for line in lines]
 

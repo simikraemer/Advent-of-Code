@@ -61,7 +61,7 @@ def noclip_simulation(grid, dauer, savinggrenze):
     return counter
 
 
-with open("AdventofCode2024/input/20.txt", "r") as file:
+with open("2024/input/20.txt", "r") as file:
     lines = file.readlines()
     grid = {}
     for y, line in enumerate(lines):

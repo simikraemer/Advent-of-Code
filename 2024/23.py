@@ -44,7 +44,7 @@ def aufgabe2(lines):
 
     return password
 
-with open("AdventofCode2024/input/23.txt", "r") as file:
+with open("2024/input/23.txt", "r") as file:
     lines = [line.strip() for line in file.readlines()]
 
 print("Aufgabe 1:", aufgabe1(lines))

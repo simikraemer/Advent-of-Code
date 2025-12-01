@@ -26,7 +26,7 @@ def blinzeln(steine, iterationen):
 
     return steine_dict
 
-with open("AdventofCode2024/input/11.txt", "r") as file:
+with open("2024/input/11.txt", "r") as file:
     line = file.readline().strip()
 
 # Aufgabe 1

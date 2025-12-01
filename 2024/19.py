@@ -48,7 +48,7 @@ def zähle_alle_möglichkeiten(handtücher, muster):
     return alle_möglichkeiten
 
 
-with open("AdventofCode2024/input/19.txt", "r") as file:
+with open("2024/input/19.txt", "r") as file:
     lines = file.readlines()
     
 handtücher, muster = parse_input(lines)

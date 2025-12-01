@@ -1,4 +1,4 @@
-with open("AdventofCode2022/input/01.txt", "r") as file:
+with open("2022/input/01.txt", "r") as file:
     inhalt = file.read().strip()
     elfen = inhalt.split("\n\n")
 

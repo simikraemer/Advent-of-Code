@@ -1,4 +1,4 @@
-with open("AdventofCode2023/input/10.txt", 'r') as file:
+with open("2023/input/10.txt", 'r') as file:
     einträge = file.read().strip().split()
 besucht = set()
 aktuelle_position = {(lambda einträge: next(((x, y) for y, row in enumerate(einträge) for x, char in enumerate(row) if char == 'S'), None))(einträge)}

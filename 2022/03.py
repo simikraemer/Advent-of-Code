@@ -7,7 +7,7 @@ def buchstabe2wert(buchstabe):
 x1_items = []
 x2_items = []
 
-with open("AdventofCode2022/input/03.txt", "r") as file:
+with open("2022/input/03.txt", "r") as file:
     inhalt = file.read().strip()
     rucksäcke = inhalt.split("\n")
 

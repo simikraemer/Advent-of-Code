@@ -1,7 +1,7 @@
 from collections import deque
 from tqdm import tqdm
 
-with open("AdventofCode2024/input/09.txt", "r") as file:
+with open("2024/input/09.txt", "r") as file:
     line = file.readline().strip()
 
 array = []

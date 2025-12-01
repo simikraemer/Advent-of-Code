@@ -1,4 +1,4 @@
-with open("AdventofCode2023/input/9.txt", "r") as datei:
+with open("2023/input/9.txt", "r") as datei:
     source_liste = datei.readlines()
     
 fiji1 = 0

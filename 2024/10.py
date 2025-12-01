@@ -43,7 +43,7 @@ def pfadfinder(array, startpunkt, endpunkte, aufgabe):
         return rating
 
 
-with open("AdventofCode2024/input/10.txt", "r") as file:
+with open("2024/input/10.txt", "r") as file:
     lines = file.readlines()
     array = [list(line.strip()) for line in lines]
 

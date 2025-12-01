@@ -3,7 +3,7 @@ fiji2 = 0
 
 data = []
 
-with open("AdventofCode2023/input/20.txt", "r") as file:
+with open("2023/input/20.txt", "r") as file:
     for zeile in file:
         vorderteil, stringzu = zeile.split(" -> ")
         zu = stringzu.split(',')

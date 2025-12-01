@@ -4,7 +4,7 @@ fiji1 = 0
 fiji2 = 0
 einträge = []
 
-with open("AdventofCode2023/input/15.txt", "r") as fl:
+with open("2023/input/15.txt", "r") as fl:
     data = fl.read().replace('\n', '')
     einträge = data.split(',')
 

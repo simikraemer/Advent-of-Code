@@ -1,7 +1,7 @@
 import sys
 from functools import cache
 
-with open("AdventofCode2023/input/12.txt", 'r') as fl:
+with open("2023/input/12.txt", 'r') as fl:
     src = fl.read().strip().split()
 
 fiji1 = 0

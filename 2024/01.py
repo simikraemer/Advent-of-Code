@@ -1,7 +1,7 @@
 array1 = []
 array2 = []
 
-with open("AdventofCode2024/input/01.txt", "r") as file:
+with open("2024/input/01.txt", "r") as file:
     lines = file.readlines()
 
 for line in lines:

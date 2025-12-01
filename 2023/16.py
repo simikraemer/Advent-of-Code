@@ -3,7 +3,7 @@ import sys
 fiji1 = 0
 fiji2 = 0
 
-with open("AdventofCode2023/input/16.txt", "r") as fl:
+with open("2023/input/16.txt", "r") as fl:
     lines = fl.readlines()
     plattform = tuple(tuple(line.strip()) for line in lines)
 

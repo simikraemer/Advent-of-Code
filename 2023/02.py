@@ -1,4 +1,4 @@
-with open('AdventofCode2023/input/2.txt', 'r') as datei:
+with open('2023/input/2.txt', 'r') as datei:
     source_liste = datei.readlines()
     
 maximale_bälle_nach_farbe = {'red': 12, 'green': 13, 'blue': 14}

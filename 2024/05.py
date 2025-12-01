@@ -1,4 +1,4 @@
-with open("AdventofCode2024/input/05.txt", "r") as file:
+with open("2024/input/05.txt", "r") as file:
     lines = file.readlines()
 
 rules = []

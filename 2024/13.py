@@ -59,7 +59,7 @@ def find_cheapest_path(claw_machine):
 
 from tqdm import tqdm
 
-with open("AdventofCode2024/input/13.txt", "r") as file:
+with open("2024/input/13.txt", "r") as file:
     lines = file.readlines()
 
 claw_machines = parse_claw_machines(lines)

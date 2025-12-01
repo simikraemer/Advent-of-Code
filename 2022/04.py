@@ -1,7 +1,7 @@
 x1 = 0
 x2 = 0
 
-with open("AdventofCode2022/input/04.txt", "r") as file:
+with open("2022/input/04.txt", "r") as file:
     inhalt = file.read().strip()
     zeilen = inhalt.split("\n")
 

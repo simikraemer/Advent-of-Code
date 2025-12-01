@@ -67,7 +67,7 @@ def aufgabe2(lines, wdh):
     return max_bananas
 
 
-with open("AdventofCode2024/input/22.txt", "r") as file:
+with open("2024/input/22.txt", "r") as file:
     lines = [int(line.strip()) for line in file.readlines()]
 
 wdh = 2000

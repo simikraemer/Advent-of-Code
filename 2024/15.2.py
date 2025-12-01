@@ -142,7 +142,7 @@ def simulate_robot(grid, boxes, commands):
     }
 
     # Log-Datei öffnen
-    log_file = open("AdventofCode2024/output/15_log.txt", "w")
+    log_file = open("2024/output/15_log.txt", "w")
 
     def log(message):
         """Schreibt eine Nachricht in die Log-Datei."""
@@ -282,7 +282,7 @@ def gps_sum(boxes):
     return total_sum
 
 
-with open("AdventofCode2024/input/15.txt", "r") as file:
+with open("2024/input/15.txt", "r") as file:
     lines = file.readlines()
 
 grid, boxes, commands = parse_input(lines)

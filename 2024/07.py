@@ -15,7 +15,7 @@ def prüfe_berechnung(wunschergebnis, zahlenmaterial, operatoren):
             return True
     return False
 
-with open("AdventofCode2024/input/07.txt", "r") as file:
+with open("2024/input/07.txt", "r") as file:
     lines = file.readlines()
 
 counter1 = 0

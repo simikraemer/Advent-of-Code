@@ -52,7 +52,7 @@ def aufgabe1(input_data):
     return output_value
 
 
-with open("AdventofCode2024/input/24.txt", "r") as file:
+with open("2024/input/24.txt", "r") as file:
     lines = file.readlines()
 
 input = parse_input(lines)
