@@ -1,7 +1,8 @@
 invalide_ids_1 = []
 invalide_ids_2 = []
 
-with open("2025/input/02.txt", "r") as file:
+from pathlib import Path
+with open(Path(__file__).resolve().parent / "input" / "02.txt", "r") as file:
     line = file.read()
     bereiche = line.split(",")
 

@@ -1,6 +1,7 @@
 maxjoltages = []
 
-with open("2025/input/03.txt", "r") as file:
+from pathlib import Path
+with open(Path(__file__).resolve().parent / "input" / "03.txt", "r") as file:
     lines = file.readlines()
     
 for line in lines:
@@ -24,12 +25,12 @@ aufgabe1 = sum(maxjoltages)
 
 def findmaxnumber(offenestellen, line):
     stelle = 0
-    restline = ""
-    if offenestellen > 0:
-        restline = str(line)[:-offenestellen]
+    if offenestellen == 1:
+        bereich = str(line)
     else:
-        restline = str(line)
-    for i,ziffer in enumerate(restline):
+        placeholder = offenestellen - 1
+        bereich = str(line)[:-placeholder]
+    for i,ziffer in enumerate(bereich):
         if int(ziffer) > stelle:
             stelle = int(ziffer)
             position = i
@@ -40,10 +41,10 @@ maxjoltages = []
 
 for line in lines:
     line = line.strip()
-    offenestellen = 11
+    offenestellen = 12
     stellen = []
 
-    while offenestellen > -1:
+    while offenestellen > 0:
         stelle, restline = findmaxnumber(offenestellen, line)
         line = restline
         stellen.append(stelle)

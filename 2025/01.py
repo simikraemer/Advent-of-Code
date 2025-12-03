@@ -2,7 +2,8 @@ zeiger = 50 #startwert
 aufgabe1 = 0
 aufgabe2 = 0
 
-with open("2025/input/01.txt", "r") as file:
+from pathlib import Path
+with open(Path(__file__).resolve().parent / "input" / "01.txt", "r") as file:
     lines = file.readlines()    
     
 for line in lines:
