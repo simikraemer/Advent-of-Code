@@ -18,14 +18,31 @@ for y, zeile in enumerate(koordinaten):
         if ziffer == "@":
             papiercount = 0
             for yvar in range(y - 1, y + 2):
-                for xvar in range(x - 1, x + 2):              
+                for xvar in range(x - 1, x + 2):
                     if (0 <= xvar < breite and 0 <= yvar < länge) and not (xvar == x and yvar == y) and koordinaten[yvar][xvar] == "@":
                         papiercount += 1
             if papiercount < 4:
                 aufgabe1 += 1
-        
-aufgabe2 = 0
 
+aufgabe2 = 0
+stuck = False
+while not stuck:
+    aufgabe2_prev = aufgabe2
+    for y, zeile in enumerate(koordinaten):
+        for x, ziffer in enumerate(zeile):
+            stuck = False
+            koord = (x,y)
+            if ziffer == "@":
+                papiercount = 0
+                for yvar in range(y - 1, y + 2):
+                    for xvar in range(x - 1, x + 2):
+                        if (0 <= xvar < breite and 0 <= yvar < länge) and not (xvar == x and yvar == y) and koordinaten[yvar][xvar] == "@":
+                            papiercount += 1
+                if papiercount < 4:
+                    aufgabe2 += 1
+                    koordinaten[y][x] = "."
+    if aufgabe2_prev == aufgabe2:
+        stuck = True
 
 print(f"Aufgabe 1: {aufgabe1}")
 print(f"Aufgabe 2: {aufgabe2}")
