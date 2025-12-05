@@ -26,6 +26,24 @@ for id in ids:
             break
             
 aufgabe2 = 0
+frischebereiche_sorted = sorted(frischebereiche)
+frischebereiche_cleaned = []
+erstereintraggesetzt = False
+for frischebereich in frischebereiche_sorted:
+    start, end = frischebereich
+    if erstereintraggesetzt == False:
+        frischebereiche_cleaned.append((start,end))
+        erstereintraggesetzt = True
+    else:
+        last_start, last_end = frischebereiche_cleaned[-1]
+        if start <= last_end:
+            frischebereiche_cleaned[-1] = (last_start, max(last_end, end))
+        else:
+            frischebereiche_cleaned.append((start, end))
+    
+for frischebereich in frischebereiche_cleaned:
+    start, end = frischebereich
+    aufgabe2 += end - start + 1
 
 print(f"Aufgabe 1: {aufgabe1}")
 print(f"Aufgabe 2: {aufgabe2}")
