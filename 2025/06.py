@@ -41,5 +41,38 @@ while i <= maxi:
             
 aufgabe2 = 0
     
+matrix = []
+for line in lines:
+    senkrechte = []
+    for eintrag in line:
+        senkrechte.append(eintrag)
+    matrix.append(senkrechte)
+    
+ops = []
+for operatortuple in enumerate(matrix[-1]):
+    if operatortuple[1] == "+" or operatortuple[1] == "*":
+        ops.append((operatortuple))
+
+for i, operatortuple in enumerate(ops):
+    bereichstart = operatortuple[0]
+    if operatortuple[1] == "+":
+        zwischen = 0
+    elif operatortuple[1] == "*":
+        zwischen = 1
+    if i < len(ops) - 1:
+        bereichende = ops[i+1][0] - 2
+    else:
+        bereichende = len(matrix[0])-2
+    for x in range(bereichstart, bereichende + 1):
+        verenazahlsen = []
+        for y in range(0,len(lines)-1):
+            verenazahlsen.append(matrix[y][x])
+        if operatortuple[1] == "+":
+            zwischen += int(''.join(verenazahlsen))
+        elif operatortuple[1] == "*":
+            zwischen *= int(''.join(verenazahlsen))
+        
+    aufgabe2 += zwischen
+    
 print(f"Aufgabe 1: {aufgabe1}")
 print(f"Aufgabe 2: {aufgabe2}")
