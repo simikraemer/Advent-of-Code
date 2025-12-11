@@ -1,10 +1,12 @@
 lights = []
 buttons = []
+joltages = []
 from pathlib import Path
 with open(Path(__file__).resolve().parent / "input" / "10.txt", "r") as file:
     lines = file.readlines()
     for line in lines:
         lights.append(list(line[line.index("[")+1:line.index("]")]))
+        joltages.append(list(map(int, line[line.index("{")+1:line.index("}")].split(","))))
         
         line_buttons = []
         pos = 0
@@ -52,8 +54,8 @@ for m, maschine in enumerate(buttons):
     
     #light_dict = {lights[m], 0}
     
-    for option in button_optionen:  
-        light = resetlight(len(lights[m]))     
+    for option in button_optionen:
+        light = resetlight(len(lights[m]))
         for o in option:
             light = push_the_button(buttons[m][o],light)
         #print("--")
@@ -64,17 +66,51 @@ for m, maschine in enumerate(buttons):
             #print(len(option), option)
             found = True
             break
-        
-    #for j, button in enumerate(buttons[m]):
-    #    
-    #    light = push_the_button(button,light)
-    #    print(button)
-    #    print(light)
-        
-    #print()
 
+# Aufgabe 2 mit KI, die michauf den ILP-Solver verwiesen hat, alle meine Ansätze wären BruteForce gewesen
+
+import numpy as np
+from scipy.optimize import milp, LinearConstraint, Bounds
 
 aufgabe2 = 0
+
+def berechne_minbuttonpresses(buttons_m, joltages_m):
+    anzahl_counters = len(joltages_m)
+    anzahl_buttons = len(buttons_m)
+    A_eq = np.zeros((anzahl_counters, anzahl_buttons), dtype=float) # Solver nutzt floats...
+
+    for j, button in enumerate(buttons_m):
+        for idx_str in button:
+            if idx_str.strip() == "":
+                continue
+            idx = int(idx_str)
+            if 0 <= idx < anzahl_counters:
+                A_eq[idx][j] = 1.0
+
+    b_eq = np.array(joltages_m, dtype=float)
+    c = np.ones(anzahl_buttons, dtype=float)
+    integrality = np.ones(anzahl_buttons, dtype=int)
+    bounds = Bounds(0, np.inf)
+    constraint_eq = LinearConstraint(A_eq, b_eq, b_eq)
+    constraints = (constraint_eq,)
+    res = milp(
+        c=c,
+        integrality=integrality,
+        bounds=bounds,
+        constraints=constraints,
+    )
+    x = res.x
+
+    minbuttonpresses = 0
+    for value in x:
+        minbuttonpresses += int(round(value))
+
+    return minbuttonpresses
+
+for m, maschine in enumerate(buttons):
+    minbuttonpresses = berechne_minbuttonpresses(buttons[m], joltages[m])
+    aufgabe2 += minbuttonpresses
+
 
 print(f"Aufgabe 1: {aufgabe1}")
 print(f"Aufgabe 2: {aufgabe2}")
